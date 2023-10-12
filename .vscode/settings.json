@@ -7,8 +7,12 @@
     "czvf",
     "DBUILD",
     "doctest",
+    "domath",
+    "drwxr",
+    "iostream",
     "iteratori",
     "l'iteratore",
+    "redirezione",
     "SFML",
     "struct",
     "SUBCASE"

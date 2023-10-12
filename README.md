@@ -1,4 +1,4 @@
-# labs2022
+# labs2023
 
 Questa repository contiene le tracce (e le soluzioni) relative alle sessioni
 di laboratorio per l'insegnamento di
