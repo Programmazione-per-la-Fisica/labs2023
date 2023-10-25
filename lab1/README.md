@@ -297,9 +297,9 @@ schermo una stringa che viene data in input:
 int main()
 {
   std::cout << "Insert your name:\n";
-  std::string name:
+  std::string name
   cin >> name;
-  std::cout << "Hello " << name << '\n'
+  std::cout << "Hello " << name << '\n':
 }
 ```
 
