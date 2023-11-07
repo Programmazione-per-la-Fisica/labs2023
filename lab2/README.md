@@ -625,7 +625,8 @@ iterazione del ciclo `for`**.
 
 > :warning: In questo caso specifico possiamo notare che:
 >
-> - ad ogni iterazione vale la relazione: $(2n)! = [2(n-1)]!\ (2n-1)\ (2n)$
+> - ad ogni iterazione del ciclo `for` nella funzione `taylor` vale la
+>   relazione: $(2n)! = [2(n-1)]!\ (2n-1)\ (2n)$
 > - possiamo registrare il risultato del fattoriale in una variabile
 >   `int factorial_2n` che andremo ad aggiornare ad ogni iterazione
 > - in questo modo non è più necessario utilizzare la funzione `factorial`
