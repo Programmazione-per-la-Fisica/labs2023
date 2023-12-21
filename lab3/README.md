@@ -134,13 +134,13 @@ Proviamo a compilare il programma, e verifichiamo attentamente i messaggi
 d'errore riportati.
 
 > ```bash
-> g++ sample.cpp -Wall -Wextra -o statistics
+> g++ sample.cpp -Wall -Wextra -o sample
 > ```
 >
 > o, su macOS:
 >
 > ```bash
-> g++-13 sample.cpp -Wall -Wextra -o statistics
+> g++-13 sample.cpp -Wall -Wextra -o sample
 > ```
 
 Quello che notiamo è che il compilatore si lamenta dell'assenza della classe
@@ -257,9 +257,9 @@ Come si implementa questa idea in _C++_?
 ...
 
 class Sample {
-  double sum_x_{};
-  double sum_x2_{};
-  int N_{};
+  double sum_x_{0.};
+  double sum_x2_{0.};
+  int N_{0};
 
  public:
   void add(double x) {
@@ -288,9 +288,8 @@ class Sample {
 > :warning: Notiamo che le variabili membro sono costituite da tipi primitivi,
 > quindi devono essere inizializzate, altrimenti il loro valore iniziale risulta
 > indeterminato. Qui proponiamo di inizializzarle direttamente dove sono
-> dichiarate, usando la sintassi `{}`. In questo modo sono _value-initialized_,
-> che per gli `int` e i `double` significa "inizializzati a zero". In
-> alternativa si potrebbe:
+> dichiarate, usando la sintassi `{0.}` e `{0}`. In questo modo i valori sono
+> "inizializzati a zero". In alternativa si potrebbe:
 >
 > - usare la sintassi più esplicita `int n = 0;`, `double sum_x = 0.;`, etc ...;
 > - definire esplicitamente un costruttore di default, che nella sua
@@ -303,12 +302,27 @@ successo.
 
 ### Identificazione dei metodi _const_
 
-Facciamo un'ultima modifica al codice della classe, dichiarando `statistics` come
-`const` in quanto **non modifica** i dati membri.
+Facciamo un'ultima modifica al codice della classe, dichiarando `statistics`
+come `const` in quanto **non modifica** i dati membri.
 
-> :exclamation: In generale, è **fondamentale** identificare tutti i metodi
-> della nostra classe che ci aspettiamo debbano essere `const` e specificarli
-> come tali.
+> :exclamation: In generale, è **fondamentale** specificare come tali tutti i
+> metodi della nostra classe che ci aspettiamo debbano essere `const`.
+>
+> Contrariamente ai tipi primitivi, dove le azioni possibili (la lettura o
+> la modifica del valore in essi contenuto) sono evidentemente collegate al
+> concetto di _constness_, nel caso di una classe può non risultare ovvio se
+> ci si aspetta che un metodo vada o meno a modificarne i dati membro.
+>
+> :exclamation: Ricordate che:
+>
+> - una volta create, istanze `const` di una determinata classe possono infatti
+> invocare solo funzioni membro `const`;
+> - un dato membro della classe non può essere modificato all'interno di un
+> metodo `const`;
+>
+> qualora tentassimo per errore di violare queste regole, il compilatore
+> segnalerebbe l'inconsistenza, **proteggendoci** dallo scrivere codice
+> concettualmente inconsistente.
 
 ```c++
 ...
@@ -352,8 +366,22 @@ A titolo esemplificativo, cosa vorremmo che succeda se:
 
 >:warning: Per gestire in modo appropriato il caso 1., possiamo avvalerci di
 > una exception.
-> Per capire come implementare test in questi casi, potete consultare la
-> sezione [Exceptions](https://github.com/doctest/doctest/blob/master/doc/markdown/assertions.md#exceptions)
+>
+> :exclamation: Ricordatevi che, qualora venga sollevata una exception
+> all'interno di una funzione, il flusso _normale_ di esecuzione del programma
+> viene alterato, pertanto non si giungerà alla parte della funzione dove questa
+> fa il `return` dell'eventuale risultato atteso.
+>
+> Inoltre, quando si utilizza `doctest`, il modo corretto di verificare se viene
+> fatto correttamente il `throw` di una exception è quello di utilizzare una
+> sintassi analoga a:
+>
+> ```c++
+> CHECK_THROWS(sample.statistics());
+> ```
+>
+> Per ulteriori dettagli rimandiamo alla sezione
+> [Exceptions](https://github.com/doctest/doctest/blob/master/doc/markdown/assertions.md#exceptions)
 > della documentazione `doctest`.
 
 Inoltre si possono aggiungere alcuni test in cui il campione contiene tre o più
