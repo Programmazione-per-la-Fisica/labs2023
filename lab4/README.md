@@ -383,7 +383,20 @@ Prima di procedere è opportuno porsi la seguente domanda:
 
 La risposta si trova consultando la documentazione: l'algoritmo
 [`std::sort`](https://en.cppreference.com/w/cpp/algorithm/sort) fa proprio
-quello che vogliamo.
+quello che vogliamo:
+
+> Estratto dalla _cppreference_:
+>
+> _Sorts the elements in the range [first, last) in non-descending order._
+
+Siccome l'uso di algoritmi non è stato ancora discusso in dettaglio in classe,
+ci limiteremo descrivere come utilizzare `std::sort` in questo semplice caso.
+
+> :raising_hand:  :raising_hand:  :raising_hand:
+>
+> Coloro che arrivano per primi a questo punto della traccia di laboratorio sono
+> pregati di segnalarlo ai docenti, che effettueranno una breve introduzione
+> all'uso di `std::sort` in laboratorio.
 
 Partendo da queste considerazioni, procedete quindi ad implementare voi il
 calcolo della mediana (e a testarlo).
@@ -597,7 +610,7 @@ sull'elaborato per i quali è richiesto feedback** esplicito da parte dei
 docenti.
 
 La consegna deve avvenire, da parte dei singoli studenti, tramite
-[questo link](), il
+[questo link](https://virtuale.unibo.it/mod/assign/view.php?id=1368321), il
 quale prevede il solo caricamento di file `.zip` o `.tgz`.
 
 Supponendo che tutto il materiale sia nella cartella `lab4` (e supponendo di
@@ -635,16 +648,3 @@ durante il corso:
   quartile).
 - Migliorare il test relativo ad `operator+` (es.: l'ordine degli elementi del
   campione è irrilevante).
-- Implementare il metodo `Sample::remove` utilizzando un algoritmo della
-  _standard library_ ([`std::find`](https://en.cppreference.com/w/cpp/algorithm/find)
-  fa al caso vostro, ma state attenti al comportamento dell'algoritmo quando il
-  valore da rimuovere non fa parte di quelli presenti nel campione)
-- Implementazione le somme parziali dentro `Sample::statistics` utilizzando
-  l'algoritmo [`std::accumulate`](https://en.cppreference.com/w/cpp/algorithm/accumulate)
-  (se riuscite, provate ad evitare di utilizzare `std::accumulate` due volte,
-  quindi eseguire due loop, accumulando in un tipo _user defined_ che include
-  sia `sum_x` che `sum_x2`, invece che in due numeri `double` separati).
-
-In aggiunta alla soluzione della parte obbligatoria del laboratorio, potete
-trovare una soluzione dell'esercizio che fa uso degli algoritmi
-`std::find` e `std::accumulate` [al seguente link](soluzioni/statistics_algo.cpp).
