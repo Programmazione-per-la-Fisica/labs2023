@@ -29,3 +29,5 @@ incoraggiamo a svolgere da soli.
 - [Secondo laboratorio](lab2/README.md): cicli `for` e `while`, funzioni,
   unit-testing (con _doctest_)
 - [Terzo laboratorio](lab3/README.md): utilizzo di `struct` e `class`
+- [Quarto laboratorio](lab4/README.md): overload di operatori, utilizzo di
+  `std::vector<>` e di alcune funzionalità della _standard library_

@@ -385,14 +385,14 @@ La risposta si trova consultando la documentazione: l'algoritmo
 [`std::sort`](https://en.cppreference.com/w/cpp/algorithm/sort) fa proprio
 quello che vogliamo:
 
-> Estratto dalla _cppreference_:
+> Estratto da _cppreference.com_:
 >
 > _Sorts the elements in the range [first, last) in non-descending order._
 
 Siccome l'uso di algoritmi non è stato ancora discusso in dettaglio in classe,
 ci limiteremo descrivere come utilizzare `std::sort` in questo semplice caso.
 
-> :raising_hand:  :raising_hand:  :raising_hand:
+> :exclamation: :exclamation: :exclamation:
 >
 > Coloro che arrivano per primi a questo punto della traccia di laboratorio sono
 > pregati di segnalarlo ai docenti, che effettueranno una breve introduzione
