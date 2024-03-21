@@ -593,7 +593,15 @@ Dopo le modifiche compilate il codice ed eseguite i test fino a quanto il
 programma funziona correttamente.
 
 Alla fine dei turni del quarto laboratorio, potrete trovare la soluzione
-dell'esercizio [al seguente link](soluzioni/statistics.cpp).
+dell'esercizio [al seguente link](soluzioni/sample.cpp).
+
+In aggiunta, [in questo video](https://www.youtube.com/watch?v=izxuLq_HZHA)
+potete trovare **interessanti spunti su come migliorare il calcolo della
+mediana** (e rendere l'algoritmo per il calcolo _generico_).
+
+> Alcune parti della presentazione trattano di argomenti che vanno ben oltre
+> il livello di approfondimento raggiunto durante il corso, ma dovreste essere
+> comunque in grado di comprenderne i concetti principali.
 
 ## Consegna facoltativa del lavoro svolto
 
@@ -646,5 +654,10 @@ durante il corso:
   i valori corrispondenti al 25, 50 e 75% della distribuzione cumulativa in modo
   simile quanto già fatto per la mediana (infatti, la mediana è il secondo
   quartile).
+- Se avete implementato il calcolo della mediana utilizzando gli indici, provate
+  a farlo utilizzando gli iteratori (o viceversa). Ovviamente, i test vi
+  permetteranno di verificare che il risultato sia il medesimo.
+- Provate ad implementare il calcolo della mediana seguendo i suggerimenti
+  discussi [nel video](https://www.youtube.com/watch?v=izxuLq_HZHA).
 - Migliorare il test relativo ad `operator+` (es.: l'ordine degli elementi del
   campione è irrilevante).
