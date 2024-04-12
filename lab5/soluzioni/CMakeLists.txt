@@ -16,13 +16,13 @@ string(APPEND CMAKE_CXX_FLAGS " -Wall -Wextra")
 
 # abilita:
 # - l'address sanitizer e l'undefined-behaviour sanitizer
-# - _LIBCPP_DEBUG (utilizzato da clang)
+# - _LIBCPP_ENABLE_ASSERTIONS=1 (utilizzato da clang)
 # - _GLIBCXX_ASSERTIONS (utilizzato da gcc)
 #in debug mode
-string(APPEND CMAKE_CXX_FLAGS_DEBUG " -fsanitize=address,undefined -fno-omit-frame-pointer -D_LIBCPP_DEBUG -D_GLIBCXX_ASSERTIONS")
-string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG " -fsanitize=address,undefined -fno-omit-frame-pointer -D_LIBCPP_DEBUG -D_GLIBCXX_ASSERTIONS")
+string(APPEND CMAKE_CXX_FLAGS_DEBUG " -D_GLIBCXX_ASSERTIONS -D_LIBCPP_ENABLE_ASSERTIONS=1 -fsanitize=address,undefined -fno-omit-frame-pointer")
+string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG " -fsanitize=address,undefined -fno-omit-frame-pointer")
 
-#add_executable(sample main.cpp sample.cpp)
+add_executable(sample main.cpp sample.cpp)
 
 # se il testing e' abilitato...
 #   per disabilitare il testing, passare -DBUILD_TESTING=OFF a cmake durante la fase di configurazione
