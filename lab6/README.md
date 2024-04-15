@@ -74,9 +74,10 @@ namespace pf {
     double x;
     double y;
     double z;
-  }
+  };
 }
 ```
+> :exclamation: Ricordate di inserire una _include guard_!
 
 Definiamo nello stesso file una funzione libera `double norm(Point3D const& p)` che data una _const reference_ ad un punto ne calcoli la norma (ci sarà utile in seguito):
 ```c++
@@ -89,6 +90,8 @@ namespace pf {
 
 Implementiamo quindi in un file `functions.cpp` (che dovrete creare) la funzione `double norm(Point3D const&)`. L'implementazione è lasciata a voi.
 
+> :exclamation: Abbiamo omesso volontariamente gli `#include` statement. Cercate di capire quali sono necessari e usateli.
+
 Procediamo poi con l'implementazione della funzione che calcoli la somma delle norme di un numero arbitrario di `Point3D` contenuti in uno `std::vector` tramite un _ciclo for_ con indici. La funzione dovrà essere dichiarata nel file `functions.hpp` all'interno del namespace `pf` come:
 
 ```c++
@@ -97,6 +100,7 @@ namespace pf {
 double sum_norms_index(std::vector<Point3D> const&);
 }
 ```
+
 e implementata nel rispettivo file `functions.cpp`, creato in precedenza.
 Procediamo adesso con l'implementazione della funzione `sum_norms_index`. Anche in questo caso, come in quelli futuri, l'implementazione è lasciata interamente a voi.
 
