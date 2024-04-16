@@ -464,4 +464,11 @@ svolgere:
 - Implementate una funzione `find_max_el` che ritorni l'indice dell'elemento del
   vettore con la norma più grande. Potrete implementarla in un primo momento
   usando gli indici o gli iteratori e poi usando gli algoritmi della
-  _standard library_.
+  _standard library_
+- Provate a risolvere, utilizzando gli algoritmi della _standard library_, gli
+  esercizi
+  [[1]](https://github.com/Programmazione-per-la-Fisica/exercises/tree/main/problemi/letterDistance)
+  e [[2]](https://github.com/Programmazione-per-la-Fisica/exercises/tree/main/problemi/maxAdjProduct)
+  della repository [exercises](https://github.com/Programmazione-per-la-Fisica/exercises/).
+- Applicate, quando possibile, gli algoritmi presentati in laboratorio
+  all'implementazione della classe `Sample`.
