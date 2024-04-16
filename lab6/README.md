@@ -116,7 +116,7 @@ namespace pf {
 
 > :exclamation: Ricordate di inserire una _include guard_ nell'header file!
 
-Definiamo nello stesso file una funzione libera `double norm(Point3D const& p)`
+Dichiariamo nello stesso file la funzione libera `double norm(Point3D const& p)`
 che data una _const reference_ ad un punto ne calcoli la norma (sarà utile in
 seguito):
 
@@ -224,7 +224,11 @@ Test project /Users/fferrari/Desktop/pf2023_labs/lab6/build
 Total Test time (real) =   0.22 sec
 ```
 
-> :exclamation: Notate che l'output menziona sempre un solo test, anche se i `TEST_CASE` sono in numero maggiore. Questo è normale perchè in questo caso si intende che un solo file di test (che contiene svariati `TEST_CASE`) è stato eseguito con successo. Se volete capire veramente quanti `TEST_CASE` sono stati eseguiti, potete eseguire direttamente il test come:
+> :exclamation: Notate che l'output menziona sempre un solo test, anche se i
+> `TEST_CASE` sono in numero maggiore. Questo è normale perché in questo caso si
+> intende che un solo file di test (che contiene svariati `TEST_CASE`) è stato
+> eseguito con successo. Se volete capire veramente quanti `TEST_CASE` sono
+> stati eseguiti, potete eseguire direttamente il test come:
 
 ```c++
 $ ./build/functions.t 
