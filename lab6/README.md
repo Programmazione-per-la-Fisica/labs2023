@@ -224,6 +224,18 @@ Test project /Users/fferrari/Desktop/pf2023_labs/lab6/build
 Total Test time (real) =   0.22 sec
 ```
 
+> :exclamation: Notate che l'output menziona sempre un solo test, anche se i `TEST_CASE` sono in numero maggiore. Questo è normale perchè in questo caso si intende che un solo file di test (che contiene svariati `TEST_CASE`) è stato eseguito con successo. Se volete capire veramente quanti `TEST_CASE` sono stati eseguiti, potete eseguire direttamente il test come:
+
+```c++
+$ ./build/functions.t 
+[doctest] doctest version is "2.4.11"
+[doctest] run with "--help" for options
+===============================================================================
+[doctest] test cases: 1 | 1 passed | 0 failed | 0 skipped
+[doctest] assertions: 2 | 2 passed | 0 failed |
+[doctest] Status: SUCCESS!
+```
+
 Una volta soddisfatto il test procediamo con la dichiarazione di una funzione
 analoga chiamata `sum_norms_it` nel file `functions.hpp`:
 
