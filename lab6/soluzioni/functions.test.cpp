@@ -2,7 +2,7 @@
 
 #include "functions.hpp"
 #include "doctest.h"
-/*
+
 TEST_CASE("Testing sum_norms_index")
 {
   const std::vector<pf::Point3D> vals{{3, 1, 2}, {2, 4, 5}};
@@ -93,4 +93,3 @@ TEST_CASE("Testing remove_algo")
   pf::remove_algo(vals, 2);
   CHECK(vals.size() == 3);
 }
-*/
